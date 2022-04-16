@@ -14,14 +14,22 @@ header {
     font-size: 2em;
     color: white;
     width: 100%;
-    height: 4em;
-    display: flex;
-    flex-direction: row;
     background-color: rgb(0, 119, 255);
     position: sticky;
     top: 0;
     z-index: 4;
     opacity: 0.90;
+}
+
+.page-header {
+    display: flex;
+    flex-direction: row;
+    height: 4em;
+
+}
+
+.page-header>.header__inner {
+    width: 100%;
 }
 
 .header__inner {
@@ -30,7 +38,6 @@ header {
     justify-items: center;
     /* padding: 2rem;*/
     padding: 1rem 2rem;
-    width: 100%;
 
 }
 
@@ -71,7 +78,7 @@ header {
 }
 
 section {
-    scroll-margin-top: 10em;
+    scroll-margin-top: 13em;
 }
 
 .button {
@@ -200,4 +207,21 @@ section {
 .main>h2 {
     margin: 0.25rem;
     font-size: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .sticky-selection {
+        display: flex;
+        width: auto;
+        overflow-x: auto;
+    }
+
+    .sticky-selection>.portfolio-button {
+        width: 20em;
+        flex: 1 1 0;
+    }
+
+    .main {
+        margin: 2em;
+    }
 }
