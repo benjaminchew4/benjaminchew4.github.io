@@ -1,0 +1,123 @@
+body {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.90);
+    min-height: 100vh;
+}
+
+:host,
+* {
+    font-size: 18px;
+    font-family: 'Jost', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --border-radius-md: 10px;
+    --border-radius-lg: 20px;
+    --color-primary-h: 223deg;
+    --color-primary-s: 100%;
+    --color-primary-l: 64%;
+    --color-primary: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+    --color-surface-primary: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), var(--opacity-surface));
+    --color-secondary: #FF8515;
+    --opacity-surface: 0.2;
+    --opacity-overlay: 0.8;
+    --font-size-xl: 48px;
+    --font-size-xxl: 64px;
+    --font-size-lg: 36px;
+    --font-size-md: 24px;
+    --box-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --box-shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.interactive {
+    --color-surface: white;
+}
+
+.interactive::after {
+    pointer-events: none;
+    z-index: 4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    opacity: 0;
+    transition: 0.15s;
+    background-color: var(--color-surface);
+    border-radius: inherit;
+}
+
+.subtitle {
+    opacity: 0.8;
+}
+
+.raised {
+    box-shadow: var(--box-shadow-md);
+}
+
+.tag-group {
+    display: flex;
+    gap: 0.2em;
+    margin: 0.5em 0;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.button-group {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+}
+
+.interactive:hover {
+    cursor: pointer;
+}
+
+.interactive:hover::after {
+    opacity: var(--opacity-surface);
+}
+
+.interacitve.raised:hover {
+    box-shadow: var(--box-shadow-lg);
+}
+
+.interactive.raised:active {
+    box-shadow: var(--box-shadow-md);
+}
+
+h1 {
+    font-weight: 600;
+    font-size: var(--font-size-xxl);
+}
+
+h2 {
+    font-weight: 500;
+    font-size: var(--font-size-xl);
+}
+
+h3 {
+    opacity: 0.8;
+    font-weight: 500;
+    font-size: var(--font-size-md);
+}
+
+h4 {
+    font-weight: 500;
+    font-size: var(--font-size-lg-2);
+}
+
+.card-header-title {
+    font-size: 26px;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
